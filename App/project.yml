@@ -1,0 +1,32 @@
+name: MergeCafe
+options:
+  bundleIdPrefix: com.lily
+  deploymentTarget:
+    iOS: "18.0"
+settings:
+  base:
+    DEVELOPMENT_TEAM: LTLXF656K6
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    CODE_SIGN_STYLE: Automatic
+    GENERATE_INFOPLIST_FILE: YES
+targets:
+  MergeCafe:
+    type: application
+    platform: iOS
+    sources:
+      - path: Cafe
+        excludes: [web]
+      - path: Cafe/web
+        type: folder
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.lily.mergecafe
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_KEY_CFBundleDisplayName: 甜點店
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: UIInterfaceOrientationPortrait
+        INFOPLIST_KEY_UIUserInterfaceStyle: Light
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
